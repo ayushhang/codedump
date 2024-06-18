@@ -1,0 +1,11 @@
+def multiplication_progarm():
+    print("Hi! welcome to the Multiplication Section ")
+    numbers_to_mult=int(input("How many numbers do you want to multiply: "))
+    counter=1
+    sum=1
+    if numbers_to_mult>0:
+        while numbers_to_mult>=counter:
+            value=int(input("Enter "+str(numbers_to_mult)+" number(s) "))
+            sum=sum*value
+            numbers_to_mult=numbers_to_mult-1
+        print("The total after multiplying everything is:",sum)
