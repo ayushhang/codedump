@@ -234,6 +234,50 @@ def calculator_prog():
     main_menu()
 
 
+#-------------------------------------------------------------------------------------------------
+#this is the random projects programs section vvv 
+
+def randon_proj():
+    print("\nYou are in the Random Projects Menu")
+    print("\nPress 1 to access the Cesar Cypher Code \nPress 2 to go back to the Main Menu")
+    chc=input("Enter your choice: ")
+    if chc=="1":
+        ceasar_input()
+    elif chc=="2":
+        print("You will be transfered to the main menu :) ")
+        time.sleep(0.5) #time delay so that everything doesnt happen in a flash (keep it at 0.5)
+        main_menu()
+        
+        
+
+
+
+def caesar_cipher(text, shift):
+    encrypted_text = ""
+    for char in text:
+        if char.isalpha():
+            # Determine whether the character is uppercase or lowercase
+            is_upper = char.isupper()
+            # Shift the character by the specified amount
+            shifted_char = chr(((ord(char) - ord('A' if is_upper else 'a') + shift) % 26) + ord('A' if is_upper else 'a'))
+            encrypted_text += shifted_char
+        else:
+            # If the character is not a letter, leave it unchanged
+            encrypted_text += char
+    return encrypted_text
+
+def ceasar_input():
+    text = input("enter text:")
+    shift = int(input("enter shift value:"))
+    encrypted_text = caesar_cipher(text, shift)
+    print("Original text:", text)
+    print("Encrypted text:", encrypted_text)
+    time.sleep(1)
+    randon_proj()
+
+
+    
+
 
 
 
@@ -250,7 +294,7 @@ def anima_print(text):
 
 def main_menu():
     print("\nEnter the serial numbers of the topics that interest you to access them")
-    print("1. All Pattern Programs \n2. Basic Mathematics Programs \n3. Calculator Program \n4. \n5. Exit")
+    print("1. All Pattern Programs \n2. Basic Mathematics Programs \n3. Calculator Program \n4. Random Projects \n5. Exit")
     chc=int(input("Enter your choice [1,2,3,4 or 5] : "))
     if(chc==1):
         pattern_programs()
@@ -259,7 +303,7 @@ def main_menu():
     elif(chc==3):
         calculator_prog()
     elif(chc==4):
-        ()
+        randon_proj()
     elif(chc==5):
         anima_print('''
     |\__/,|   (`)
