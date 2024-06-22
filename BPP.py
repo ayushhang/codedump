@@ -42,11 +42,82 @@ def pattern_programs():
         main_menu()
     else:
         print("There must have been some error")
+        time.sleep(0.5)
+        pattern_programs()
 
 
 
 def triangle_menu():
-    print("\nTriangle Menu :\n1. [Left Side]Right Angle Icosceles Triangle \n2. [Right Side]Right Angle Icosceles Triangle \n3. [Center]Equilateral Triangle \n4. [Left Side]Equilateral Triangle \n5. [Right Side]Equilateral Triangle ")
+    print("\nTriangle Menu :\n1. [Left Side]Right Angle Icosceles Triangle \n2. [Right Side]Right Angle Icosceles Triangle \n3. [Left Side]Upside Down Right Angle Icosceles Triangle \n4. [Right Side]Upside Down Right Angle Icosceles Triangle\n5. [Center]Equilateral Triangle \n6. [Left Side]Equilateral Triangle \n7. [Right Side]Equilateral Triangle \n8. Go back to the Pattern Programs Menu")
+    chc=input("Enter your choice: ")
+    if chc=="1": #[Left Side]Right Angle Icosceles Triangle
+        size=int(input("Enter the number of lines you want the triangle to cover : "))
+        character=input("Enter the character you want to use in the Triangle")
+        for i in range (1,size):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()
+        time.sleep(1) #time delay so that everything doesnt happen in a flash
+        print("Here is the code for the above operation :")
+        print('''
+        for i in range (1,size):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()''')
+        time.sleep(0.5)
+        triangle_menu()
+        
+    elif chc=="2": #[Right Side]Right Angle Icosceles Triangle
+        size=int(input("Enter the number of lines you want the triangle to cover : "))
+        character=input("Enter the character you want to use in the Triangle")
+        for i in range (size,1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()
+        time.sleep(1) #time delay so that everything doesnt happen in a flash
+        print("Here is the code for the above operation :")
+        print('''
+        for i in range (size, 1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()''')
+        time.sleep(0.5)
+        triangle_menu()
+
+    
+    elif chc=="3":
+        size=int(input("Enter the number of lines you want the triangle to cover : "))
+        character=input("Enter the character you want to use in the Triangle")
+        for i in range (size,1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()
+        time.sleep(1) #time delay so that everything doesnt happen in a flash
+        print("Here is the code for the above operation :")
+        print('''
+        for i in range (size, 1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()''')
+        time.sleep(0.5)
+        triangle_menu()
+
+    elif chc=="4":
+
+    elif chc=="5":
+
+
+    elif chc=="8":
+        print("You will be returned back to the Pattern Programs Menu")
+        time.sleep(0.5)
+        pattern_programs()
+    
+    else:
+        print("There must have been some error")
+        time.sleep(0.5)
+        triangle_menu()
+    
+
 
 def box_menu():
     print("\nBox Menu :\n1. Square \n2. Rectangle \n3. Diamond")
@@ -76,6 +147,8 @@ def basic_math_prog():
         main_menu()
     else:
         print("There must have been some error")
+        time.sleep(1)
+        basic_math_prog()
         
 
 def addition_programs():
@@ -247,6 +320,10 @@ def randon_proj():
         print("You will be transfered to the main menu :) ")
         time.sleep(0.5) #time delay so that everything doesnt happen in a flash (keep it at 0.5)
         main_menu()
+    else :
+        print("There must have been an error :/")
+        time.sleep(0.5) #time delay so that everything doesnt happen in a flash (keep it at 0.5)
+        randon_proj()
         
         
 
@@ -338,3 +415,9 @@ anima_print('''
    𝚊𝚗𝚍 s𝚌𝚑𝚘𝚘𝚕 𝚕𝚎𝚟𝚎𝚕, 𝚞𝚜𝚎 𝚒𝚝 𝚠𝚒𝚜𝚎𝚕𝚢 ''')
 time.sleep(0.5)
 main_menu()
+
+
+#add the function recall menu after every error statement 
+#pattern regognition and production for the program
+#retrive replit database into the code
+#lcm hcf 
