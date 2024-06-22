@@ -417,7 +417,3 @@ time.sleep(0.5)
 main_menu()
 
 
-#add the function recall menu after every error statement 
-#pattern regognition and production for the program
-#retrive replit database into the code
-#lcm hcf 
