@@ -5,7 +5,6 @@ Pattern Progs:
         right hand side right angle ico with numbers and user defined size and character
         two right angle ico making an equilateral triangle user defined size and character
         center equilateral triangle with user defined size and characters
-
     Box box box
         square
         rectangle
@@ -14,17 +13,18 @@ Pattern Progs:
         simple circle
         semi circle
         spinning donut
-
 '''
 
 #-------------------------------------------------------------------------------------------------
 #importing libraries in the program vvv
+
 
 import time
 
 
 #-------------------------------------------------------------------------------------------------
 #this is the pattern programs section vvv
+
 
 def pattern_programs():
     print("\nYou are in the Pattern Programs Menu")
@@ -84,7 +84,6 @@ def triangle_menu():
         time.sleep(0.5)
         triangle_menu()
 
-    
     elif chc=="3":
         size=int(input("Enter the number of lines you want the triangle to cover : "))
         character=input("Enter the character you want to use in the Triangle")
@@ -103,21 +102,36 @@ def triangle_menu():
         triangle_menu()
 
     elif chc=="4":
+        size=int(input("Enter the number of lines you want the triangle to cover : "))
+        character=input("Enter the character you want to use in the Triangle")
+        for i in range (size,1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()
+        time.sleep(1) #time delay so that everything doesnt happen in a flash
+        print("Here is the code for the above operation :")
+
 
     elif chc=="5":
+        size=int(input("Enter the number of lines you want the triangle to cover : "))
+        character=input("Enter the character you want to use in the Triangle")
+        for i in range (size,1,-1):
+            for j in range(1,i):
+                print(character , end=" ")
+            print()
+        time.sleep(1) #time delay so that everything doesnt happen in a flash
+        print("Here is the code for the above operation :")
 
 
     elif chc=="8":
         print("You will be returned back to the Pattern Programs Menu")
         time.sleep(0.5)
         pattern_programs()
-    
+
     else:
         print("There must have been some error")
         time.sleep(0.5)
-        triangle_menu()
-    
-
+        triangle_menu()   
 
 def box_menu():
     print("\nBox Menu :\n1. Square \n2. Rectangle \n3. Diamond")
@@ -149,7 +163,7 @@ def basic_math_prog():
         print("There must have been some error")
         time.sleep(1)
         basic_math_prog()
-        
+
 
 def addition_programs():
     print("Hi! welcome to the Addition Section ")
@@ -296,11 +310,11 @@ def division_programs():
         print("There must have been some error")
         time.sleep(1) #time delay so that everything doesnt happen in a flash
         basic_math_prog() #function recall to take you back to the basic maths menu
-                
 
 
 #-------------------------------------------------------------------------------------------------
 #this is the calculator programs section vvv 
+
 
 def calculator_prog():       
     print("Under Construction")
@@ -324,9 +338,6 @@ def randon_proj():
         print("There must have been an error :/")
         time.sleep(0.5) #time delay so that everything doesnt happen in a flash (keep it at 0.5)
         randon_proj()
-        
-        
-
 
 
 def caesar_cipher(text, shift):
@@ -343,28 +354,26 @@ def caesar_cipher(text, shift):
             encrypted_text += char
     return encrypted_text
 
+
 def ceasar_input():
-    text = input("enter text:")
-    shift = int(input("enter shift value:"))
+    text = input("Enter text: ")
+    shift = int(input("Enter shift value: "))
     encrypted_text = caesar_cipher(text, shift)
-    print("Original text:", text)
-    print("Encrypted text:", encrypted_text)
+    print("Original text: ", text)
+    print("Encrypted text: ", encrypted_text)
     time.sleep(1)
     randon_proj()
-
-
-    
-
-
 
 
 #-------------------------------------------------------------------------------------------------
 #this is the animated print section
 
+
 def anima_print(text):
   for char in text:
     print(char, end='', flush=True)
     time.sleep(0.003)
+
 
 #-------------------------------------------------------------------------------------------------
 #this is the main menu you see in the start
@@ -416,4 +425,11 @@ anima_print('''
 time.sleep(0.5)
 main_menu()
 
-
+#retcifications to be made
+    #variables in the functions could be the same 
+    #declare the constants as global in capital letters
+    #use while True: loops to reprint the same thing rather than calling the function again and again 
+    #import time as t 
+    #try to make the program more efficient and light 
+    #dont repeat the same code again and again make a function for it 
+    #try to reduce the usage of nested loops
