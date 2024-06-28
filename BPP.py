@@ -425,11 +425,4 @@ anima_print('''
 time.sleep(0.5)
 main_menu()
 
-#retcifications to be made
-    #variables in the functions could be the same 
-    #declare the constants as global in capital letters
-    #use while True: loops to reprint the same thing rather than calling the function again and again 
-    #import time as t 
-    #try to make the program more efficient and light 
-    #dont repeat the same code again and again make a function for it 
-    #try to reduce the usage of nested loops
+
