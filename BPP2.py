@@ -1,6 +1,3 @@
-
-
-
 import time
 
 def anima_print(text):
@@ -32,6 +29,7 @@ def exit_status():
 
 
 #-----------------------------------------------------------------------------------------------------------------------------
+
 
 
 def main():
@@ -114,20 +112,10 @@ def subtraction():
     print("Hello! You are in the Subtraction Section")
     sub1=float(input("Enter the first number: "))
     sub2=float(input("Enter the second number: "))
-    sub=sub1-sub2
+    
     
     sleep()
-    print("The difference between the two is: ",sub)
-
-    chc=input("Do you need the code for the above operation? (Y/N)")
-    if chc=="Y" or chc=="y":
-        sleep()
-        print("Here is the code for the above operation :")
-        print('''
-        sub1=float(input("Enter the first number: "))
-        sub2=float(input("Enter the second number: ")) 
-        sub=sub1-sub2 
-        print("The difference between the two is: ",sub)''')  
+    print("The difference between the two is: ", (sub1-sub2))
     
     maths()
 
@@ -140,7 +128,12 @@ def multiplication():
 
 
 def simple_multi():
-    pass
+    n1=float(input("Enter the number you wish to multiply : "))
+    n2=float(input(f"Enter the number you wish to multiply with {n1} : "))
+    print(f"The product of {n1} and {n2} is = {n1*n2}")
+
+    maths()
+
 
 def rec_multi():
     number1=float(input("Enter the 1st number you want to multiply : "))
@@ -158,6 +151,13 @@ def rec_multi():
         else :
             sleep()
             print(f"Final Answer : {total} \n")
+            sleep()
+            chc=input("Do you need the code for the above operation? (Y/N)")
+            if chc=="Y" or chc=="y":
+                sleep()
+                print("Here is the code for the above operation :")
+                rec  
+    
             break
 
     multiplication()
@@ -165,15 +165,94 @@ def rec_multi():
 
 def division():
     sleep()
+    choice=input_choice_func(DIVISIONP)
+    check_choice(choice,DIVISION)
+    greet(DIVISION,choice)
 
 
+def simple_div():
+    sleep()
+    num1=float(input("Enter the number you want to divide : "))
+    num2=float(input("Enter the number you want to dive with : "))
+    print("The quotient is : ", (lambda a,b: a/b)(a=num1,b=num2))
+    print("The remainder is : ",  (lambda a,b: a % b)(a=num1,b=num2)) 
+    chc=input("Do you need the code for the above operation? (Y/N)")
+    if chc=="Y" or chc=="y":
+        sleep()
+        print("Here is the code for the above operation :")
+        print('''
+    num1=float(input("Enter the number you want to divide : "))
+    num2=float(input("Enter the number you want to dive with : "))
+    print("The quotient is : ", (lambda a,b: a/b)(a=num1,b=num2))
+    print("The remainder is : ",  (lambda a,b: a % b)(a=num1,b=num2)) ''')
+        
+    division()
+              
+
+def rec_div():
+    sleep()
+    num1=float(input("Enter the number you want to start dividing with :"))
+    while True:
+        num2=float(input("Enter the number you want to divide with :"))
+        div=num1/num2
+        print("The answer is (quotient): ",div)
+        choice=input("Do you wish to divide further (y/n) ?")
+        if choice=="y" or choice=="Y":
+            print("New Dividend : ",div)
+            num1=div
+            num2=0.0
+        else :
+            print("Final Answer : ",div)
+
+            division()
+
+            break
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------
 
 
 def pattern():
     sleep()
-    pass
-            
+    choice=input_choice_func(PATTERNP)
+    check_choice(choice,PATTERN)
+    greet(PATTERN,choice) 
 
+
+def box():
+    sleep()
+    choice=input_choice_func(BOXP)
+    check_choice(choice,BOX)
+    greet(BOX,choice) 
+
+def recgtangle():
+    l=int(input("Enter the length of the rectangle you want to create : "))
+    b=int(input("Enter the breath of the rectangle you want to create : "))
+    ch=input("Enter any character you want the rectangle to be made with : ")
+
+    while b>0:
+        print(ch*l)
+        b-=1
+
+
+
+def triangle():
+    sleep()
+    choice=input_choice_func(PATTERNP)
+    check_choice(choice,PATTERN)
+    greet(PATTERN,choice)
+
+
+def circle():
+    pass
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------
+
+
+            
 def other():
     sleep()
     choice=input_choice_func(OTEHRSP)
@@ -205,6 +284,8 @@ def ceasar_input():
 
 
 
+
+#-----------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -275,6 +356,10 @@ def check_choice(choice,topic):
            print(f"Enter {i+1} for "+str(topic[i]))
 
 
+
+#-----------------------------------------------------------------------------------------------------------------------------
+
+
                 
 '''DATABASE
 Any changes you want to make in the options, or add new projects or change the way for navigation can be done here
@@ -292,8 +377,35 @@ OTEHRSP={1:"Ceasar Cipher",
 #---------------------------------------------------------------------------------------------------------------------------
 
 
-PATTERN={}
-PATTERNP={}
+PATTERN={1:box,
+         2:triangle,
+         3:circle,
+         4:menu}
+PATTERNP={1:"Box Programs",
+          2:"Triangle Pattern Programs",
+          3:"Circle Pattern programs",
+          4:"Go Back"}
+
+
+BOX={1:rectangle,
+     2:square,
+     3:pattern}
+
+BOXP={1:"Rectangle Pattern Program",
+      2:"Square Pattern Program",
+      3:"Go Back"}
+
+
+TRIANGLE={}
+
+TRIANGLEP={}
+
+
+CIRCLE={}
+
+CIRCLEP={}
+
+
 
 
 #---------------------------------------------------------------------------------------------------------------------------
@@ -338,7 +450,13 @@ MULTIPLICATIONP={1: "Multiplication of Two Numbers",
 #---------------------------------------------------------------------------------------------------------------------------
 
 
-DIVISION={}
+DIVISION={1:simple_div,
+          2:rec_div,
+          3:maths}
+
+DIVISIONP={1:"Simple Division",
+          2:"Recurring Division",
+          3:"Go Back"}
 
 
 #---------------------------------------------------------------------------------------------------------------------------

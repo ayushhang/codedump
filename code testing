@@ -75,7 +75,6 @@ temp=[]
 for i in MENU.keys():
     temp.append(i)
 
- '''
 
 def dic_to_list(topic):
         #using the keys as a list to print 
@@ -121,3 +120,19 @@ def input_choice_func(topic):
 
 
 input_choice_func(MENU)
+
+'''
+
+def convert(deg):
+    if (str(deg) != ""):
+        deg=input("Enter the tempreature in Celsius : ")
+    F=(deg*9/5)+32
+    return F
+
+l=int(input("Enter the length of the rectangle you want to create : "))
+b=int(input("Enter the breath of the rectangle you want to create : "))
+ch=input("Enter any character you want the rectangle to be made with : ")
+
+while b>0:
+    print(ch*l)
+    b-=1
