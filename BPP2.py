@@ -77,7 +77,7 @@ def addition():
 
 def simple_add():
     sleep()
-    numbers_to_add1=float(input("Enter the 1st number you want to add : "))
+    numbers_to_add1=float(input("\nEnter the 1st number you want to add : "))
     numbers_to_add2=float(input("Enter the 2nd number you want to add : "))
     sleep()
     print(f"Sum of {numbers_to_add1} and {numbers_to_add2} is : {numbers_to_add1 + numbers_to_add2} \n")
@@ -87,7 +87,7 @@ def simple_add():
 
 def rec_add():
     sleep()
-    numbers_to_add1=float(input("Enter the 1st number you want to add : "))
+    numbers_to_add1=float(input("\nEnter the 1st number you want to add : "))
 
     while True:
         numbers_to_add2=float(input("Enter the number you want to add : "))
@@ -109,8 +109,8 @@ def rec_add():
 
 def subtraction():
     sleep()
-    print("Hello! You are in the Subtraction Section")
-    sub1=float(input("Enter the first number: "))
+    print("\nHello! You are in the Subtraction Section")
+    sub1=float(input("\nEnter the first number: "))
     sub2=float(input("Enter the second number: "))
     
     
@@ -128,7 +128,7 @@ def multiplication():
 
 
 def simple_multi():
-    n1=float(input("Enter the number you wish to multiply : "))
+    n1=float(input("\nEnter the number you wish to multiply : "))
     n2=float(input(f"Enter the number you wish to multiply with {n1} : "))
     print(f"The product of {n1} and {n2} is = {n1*n2}")
 
@@ -136,7 +136,7 @@ def simple_multi():
 
 
 def rec_multi():
-    number1=float(input("Enter the 1st number you want to multiply : "))
+    number1=float(input("\nEnter the 1st number you want to multiply : "))
 
     while True:
         number2=float(input("Enter the number you want to multiply : "))
@@ -172,7 +172,7 @@ def division():
 
 def simple_div():
     sleep()
-    num1=float(input("Enter the number you want to divide : "))
+    num1=float(input("\nEnter the number you want to divide : "))
     num2=float(input("Enter the number you want to dive with : "))
     print("The quotient is : ", (lambda a,b: a/b)(a=num1,b=num2))
     print("The remainder is : ",  (lambda a,b: a % b)(a=num1,b=num2)) 
@@ -191,7 +191,7 @@ def simple_div():
 
 def rec_div():
     sleep()
-    num1=float(input("Enter the number you want to start dividing with :"))
+    num1=float(input("\nEnter the number you want to start dividing with :"))
     while True:
         num2=float(input("Enter the number you want to divide with :"))
         div=num1/num2
@@ -226,8 +226,9 @@ def box():
     check_choice(choice,BOX)
     greet(BOX,choice) 
 
-def recgtangle():
-    l=int(input("Enter the length of the rectangle you want to create : "))
+def rectangle():
+    sleep()
+    l=int(input("\nEnter the length of the rectangle you want to create : "))
     b=int(input("Enter the breath of the rectangle you want to create : "))
     ch=input("Enter any character you want the rectangle to be made with : ")
 
@@ -235,6 +236,19 @@ def recgtangle():
         print(ch*l)
         b-=1
 
+    box()
+
+
+def square():
+    sleep()
+    a=int(input("\nEnter the side of the squre : "))
+    ch=input("Enter any character you want the rectangle to be made with : ")
+    tmp=a
+    while a>0:
+        print(ch*tmp)
+        a-=1
+
+    box()
 
 
 def triangle():
@@ -381,6 +395,7 @@ PATTERN={1:box,
          2:triangle,
          3:circle,
          4:menu}
+
 PATTERNP={1:"Box Programs",
           2:"Triangle Pattern Programs",
           3:"Circle Pattern programs",
