@@ -152,12 +152,6 @@ def rec_multi():
             sleep()
             print(f"Final Answer : {total} \n")
             sleep()
-            chc=input("Do you need the code for the above operation? (Y/N)")
-            if chc=="Y" or chc=="y":
-                sleep()
-                print("Here is the code for the above operation :")
-                rec  
-    
             break
 
     multiplication()
@@ -176,16 +170,7 @@ def simple_div():
     num2=float(input("Enter the number you want to dive with : "))
     print("The quotient is : ", (lambda a,b: a/b)(a=num1,b=num2))
     print("The remainder is : ",  (lambda a,b: a % b)(a=num1,b=num2)) 
-    chc=input("Do you need the code for the above operation? (Y/N)")
-    if chc=="Y" or chc=="y":
-        sleep()
-        print("Here is the code for the above operation :")
-        print('''
-    num1=float(input("Enter the number you want to divide : "))
-    num2=float(input("Enter the number you want to dive with : "))
-    print("The quotient is : ", (lambda a,b: a/b)(a=num1,b=num2))
-    print("The remainder is : ",  (lambda a,b: a % b)(a=num1,b=num2)) ''')
-        
+    
     division()
               
 
@@ -253,13 +238,45 @@ def square():
 
 def triangle():
     sleep()
-    choice=input_choice_func(PATTERNP)
-    check_choice(choice,PATTERN)
-    greet(PATTERN,choice)
+    choice=input_choice_func(TRIANGLEP)
+    check_choice(choice,TRIANGLE)
+    greet(TRIANGLE,choice)
+
+def right_angle_tri_left():
+    sleep()
+    n=int(input("Enter the size of the triangle you wish to create : "))
+    chc=input("Enter the character you want the traingle to be made of : ")
+    for i in range (1,n):
+        print(chc*i)
+    
+    triangle()
+
+
+def right_angle_tri_right():
+    sleep()
+    pass
+
+def right_angle_tri_upsidedown_left():
+    sleep()
+
+    pass
+
+def right_angle_tri_upsidedown_right():
+    sleep()
+
+    pass
+
+def equilateral_triangle():
+    sleep()
+
+    pass
 
 
 def circle():
-    pass
+    sleep()
+    choice=input_choice_func(PATTERNP)
+    check_choice(choice,PATTERN)
+    greet(PATTERN,choice)
 
 
 
@@ -411,9 +428,19 @@ BOXP={1:"Rectangle Pattern Program",
       3:"Go Back"}
 
 
-TRIANGLE={}
+TRIANGLE={1:right_angle_tri_left,
+          2:right_angle_tri_right,
+          3:right_angle_tri_upsidedown_left,
+          4:right_angle_tri_upsidedown_right,
+          5:equilateral_triangle,
+          6:pattern}
 
-TRIANGLEP={}
+TRIANGLEP={1:"Right angle triangle on the left side ",
+           2:"Right angle triangle on the right side",
+           3:"Upside down right angle triangle on the left side",
+           4:"Upside down right angle triangle on the right side",
+           5:"Equilateral triangle",
+           6:"Go Back"}
 
 
 CIRCLE={}
