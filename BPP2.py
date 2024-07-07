@@ -254,29 +254,61 @@ def right_angle_tri_left():
 
 def right_angle_tri_right():
     sleep()
-    pass
+    n=int(input("Enter the size of the triangle you wish to create : "))
+    chc=input("Enter the character you want the traingle to be made of : ")
+    for i in range(n):
+        spaces = "    " * i
+        tmp = chc * (n - i)
+        print(f"{spaces}{tmp}")
+
 
 def right_angle_tri_upsidedown_left():
     sleep()
-
-    pass
+    n=int(input("Enter the size of the triangle you wish to create : "))
+    chc=input("Enter the character you want the traingle to be made of : ")
+    for i in range (n,1):
+        print(chc*i)
 
 def right_angle_tri_upsidedown_right():
     sleep()
+    n=int(input("Enter the size of the triangle you wish to create : "))
+    chc=input("Enter the character you want the traingle to be made of : ")
+    for i in range(n,1):
+        spaces = "    " * i
+        tmp = chc * (n - i)
+        print(f"{spaces}{tmp}")
 
-    pass
 
 def equilateral_triangle():
     sleep()
-
-    pass
+    n=int(input("Enter the size of the triangle you wish to create : "))
+    chc=input("Enter the character you want the traingle to be made of : ")
+    for i in range(n):
+        spaces = " " * (n - i - 1)
+        tmp = chc * (2 * i + 1)
+        print(f"{spaces}{tmp}")
 
 
 def circle():
     sleep()
-    choice=input_choice_func(PATTERNP)
-    check_choice(choice,PATTERN)
-    greet(PATTERN,choice)
+    choice=input_choice_func(CIRCLEP)
+    check_choice(choice,CIRCLE)
+    greet(CIRCLE,choice)
+
+
+def sphere():
+    sleep()
+    n=int(input("Enter the radius of the sphere you wish to create : "))
+    chc=input("Enter the character you want the sphere to be made of : ")
+    for i in range (n):
+        print()
+
+def norm_circle():
+    pass
+
+def oval():
+    pass
+
 
 
 
@@ -334,14 +366,25 @@ def input_choice_func(topic):
         for key in topic.keys() :
             print(f"Enter {key} for ", topic[key])
         
-        choice=input("Enter your choice : ")
+        try:
+            choice=input("Enter your choice : ")
+
+        except ValueError as err:
+            print(err)
+            print("Kindly enter a valid choice")
+
+        except:
+            print("Sorry we are having an issue on our end :) ")
         
-        if (str(choice) not in str(tmp)):
+        else:
+            return choice
+
+        
+        '''if (str(choice) not in str(tmp)):
             print("\nInvalid Input\n")
 
-            input_choice_func(topic)
+            input_choice_func(topic)'''
 
-        return choice
 
         
 
@@ -349,16 +392,26 @@ def input_choice_func(topic):
         #printing the options if its a list 
         for i in range (len(topic)):
             print(f"Enter {i+1} for "+topic[i])
+        
+        try:
+            choice=input("Enter your choice : ")
 
-        choice=input("Enter your choice : ")
+        except ValueError as err:
+            print(err)
+            print("Kindly enter a valid choice")
 
+        except:
+            print("Sorry we are having an issue on our end :) ")
+        
+        else:
+            return choice
+
+        '''
         if (0> int(choice) >= len(topic)):
             print("\nInvalid Input\n")
 
             input_choice_func(topic)
-
-
-        return choice
+        '''
 
 
 
@@ -369,8 +422,29 @@ def input_choice_func(topic):
 
 def check_choice(choice,topic):
 
-    choice=int(choice) #because the input function returns choice as a string 
+    try:
+        choice=int(choice) #because the input function returns choice as a string 
 
+    except:
+        print("We are facing issues on our end :( ")
+
+    else:
+        if type(topic)==dict: #so that this function can be used for dictionaries and lists
+
+            for key in topic:
+
+                if choice == key:
+
+                    time.sleep(0.5)
+                    print()
+                    topic[key]() #executes the function contained in the dictionary 
+                    break
+
+        else:
+            for i in len(topic):
+                print(f"Enter {i+1} for "+str(topic[i])) 
+
+'''
     if type(topic)==dict: #so that this function can be used for dictionaries and lists
 
         for key in topic:
@@ -384,7 +458,11 @@ def check_choice(choice,topic):
 
     else:
        for i in len(topic):
-           print(f"Enter {i+1} for "+str(topic[i]))
+           print(f"Enter {i+1} for "+str(topic[i])) 
+
+
+'''
+
 
 
 
@@ -435,17 +513,24 @@ TRIANGLE={1:right_angle_tri_left,
           5:equilateral_triangle,
           6:pattern}
 
-TRIANGLEP={1:"Right angle triangle on the left side ",
-           2:"Right angle triangle on the right side",
-           3:"Upside down right angle triangle on the left side",
-           4:"Upside down right angle triangle on the right side",
-           5:"Equilateral triangle",
+TRIANGLEP={1:"Print a Right angle triangle on the left side ",
+           2:"Print a Right angle triangle on the right side",
+           3:"Print an Upside down right angle triangle on the left side",
+           4:"Print an Upside down right angle triangle on the right side",
+           5:"Print an Equilateral triangle",
            6:"Go Back"}
 
 
-CIRCLE={}
+CIRCLE={1:sphere,
+        2:norm_circle,
+        3:oval,
+        4:pattern
+        }
 
-CIRCLEP={}
+CIRCLEP={1:"Sphere Program",
+         2:"Circle Program",
+         3:"Oval Program",
+         4:"Go Back"}
 
 
 
