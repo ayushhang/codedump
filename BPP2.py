@@ -379,15 +379,6 @@ def input_choice_func(topic):
         else:
             return choice
 
-        
-        '''if (str(choice) not in str(tmp)):
-            print("\nInvalid Input\n")
-
-            input_choice_func(topic)'''
-
-
-        
-
     else:
         #printing the options if its a list 
         for i in range (len(topic)):
@@ -406,13 +397,6 @@ def input_choice_func(topic):
         else:
             return choice
 
-        '''
-        if (0> int(choice) >= len(topic)):
-            print("\nInvalid Input\n")
-
-            input_choice_func(topic)
-        '''
-
 
 
 
@@ -426,7 +410,7 @@ def check_choice(choice,topic):
         choice=int(choice) #because the input function returns choice as a string 
 
     except:
-        print("We are facing issues on our end :( ")
+        print("Sorry we are facing issues on our end :( ")
 
     else:
         if type(topic)==dict: #so that this function can be used for dictionaries and lists
@@ -443,26 +427,6 @@ def check_choice(choice,topic):
         else:
             for i in len(topic):
                 print(f"Enter {i+1} for "+str(topic[i])) 
-
-'''
-    if type(topic)==dict: #so that this function can be used for dictionaries and lists
-
-        for key in topic:
-
-            if choice == key:
-
-                time.sleep(0.5)
-                print()
-                topic[key]() #executes the function contained in the dictionary 
-                break
-
-    else:
-       for i in len(topic):
-           print(f"Enter {i+1} for "+str(topic[i])) 
-
-
-'''
-
 
 
 
