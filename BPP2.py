@@ -327,7 +327,7 @@ def caesar_cipher(text, shift):
     encrypted_text = ""
     for char in text:
         if char.isalpha():
-            # Determine whether the character is uppercase or lowercase
+            # Determine whether the character is uppercase or lowercasee
             is_upper = char.isupper()
             # Shift the character by the specified amount
             shifted_char = chr(((ord(char) - ord('A' if is_upper else 'a') + shift) % 26) + ord('A' if is_upper else 'a'))
